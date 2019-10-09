@@ -1,0 +1,54 @@
+<!--pages/shopOrder/shopOrder.wxml-->
+<view class="navs">
+  <block wx:for-items="{{orderItems}}" wx:key="name">
+    <view class="nav-item" data-type="{{item.name}}" data-typeid="{{item.typeId}}" catchtap="selectType" data-index='{{index}}'>
+      <image src="{{item.imageurl}}" class="nav-image" />
+      <text>{{item.name}}</text>
+    </view>
+  </block>
+</view>
+
+<view class="tab-content1" wx:if='{{orderList.length == 0}}'>
+  <image class="tab-image" src="../../image/non_cart.jpg"></image>
+  <text>您还没有相关订单哦！</text>
+</view>
+<view>
+  <view class="orders-box">
+    <view wx:for="{{orderList}}" wx:key="index" class="orders-list">
+      <text class='title'>订单编号：{{item.serial}}</text>
+
+      <view wx:for="{{item.itemObject}}" wx:key="index" class="itemsObject">
+        <image class="orders-thumb" src="{{defaultURL}}{{item.image}}"></image>
+        <view class="orders-pro-name">{{item.goodsName}}</view>
+        <view class="orders-pro-size">颜色分类:{{item.skuName}};尺码:{{item.goodsSize}}</view>
+        <view class="orders-pro-price">￥{{item.unitPrice}}</view>
+        <view class="orders-count-num">×{{item.quantity}}</view>
+        <text>\n</text>
+      </view>
+      <view wx:if="{{typeId == 0}}" class='buttonGroup'>
+
+      </view>
+      <view wx:if="{{typeId == 2}}" class='buttonGroup'>
+        <button class='buttonPay' data-index="{{index}}" bindtap='toSend'>发货</button>
+      </view>
+      <view wx:if="{{typeId == 3}}" class='buttonGroup'>
+        <dilivery isShowSelected="{{isSelected}}"></dilivery>
+        <button class='buttonDilivery' data-index="{{index}}" bindtap='toConfirm'>查看物流</button>
+       
+        <!-- 
+       <button class='buttonDilivery' data-index="{{index}}" bindtap='toDilivery'>同意退货</button>
+      
+      <button class='buttonPay' data-index="{{index}}" bindtap='toDilivery'>查看物流</button> -->
+
+      </view>
+      <view wx:if="{{typeId == 9}}" class='buttonGroup'>
+        <dilivery isShowSelected="{{isSelected}}"></dilivery>
+        <button class='buttonDilivery' data-index="{{index}}" bindtap='toDilivery'>查看物流</button>
+        <button class='buttonCancel' data-index="{{index}}" bindtap='toDel'>同意退货</button>
+        <button class='buttonPay' data-index="{{index}}" bindtap='toConfirm'>不同意退货</button>
+ 
+       
+      </view>
+    </view>
+  </view>
+</view>

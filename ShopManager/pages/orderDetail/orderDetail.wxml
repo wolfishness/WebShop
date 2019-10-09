@@ -1,0 +1,92 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<!--pages/order/order.wxml-->
+<view class='status'>
+  <image src='/image/shop.jpg'></image>
+  <view wx:if="{{orderDetail.status == 0}}">
+    <text class='statusText'>等待买家付款</text>
+  </view>
+
+  <view wx:if="{{orderDetail.status == 2}}">
+    <text class='statusText'>商品正在准备打包</text>
+  </view>
+
+  <view wx:if="{{orderDetail.status == 3}}">
+    <text class='statusText'>商品已发出</text>
+  </view>
+
+  <view wx:if="{{orderDetail.status == 9}}">
+    <text class='statusText'>待同意退货</text>
+  </view>
+
+  <view wx:if="{{orderDetail.status == 10}}">
+    <text class='statusText'>退货中</text>
+  </view>
+
+</view>
+
+
+<view class="orders-address">
+  <image class='orders-address-icon' src='/image/address.png'></image>
+  <text class="orders-address-name">收货人: {{orderDetail.consigneeName}}</text>
+  <text class="orders-address-phone">电话: {{orderDetail.phoneNum}}</text>
+  <view class="orders-address-detail">{{orderDetail.address}}</view>
+</view>
+
+
+<view>
+  <view class="orders-box">
+    <view class="orders-list">
+
+
+      <view wx:for="{{orderDetail.itemObject}}" wx:key="index" class="itemsObject">
+        <image class="orders-thumb" src="{{defaultURL}}{{item.image}}"></image>
+
+        <view class="orders-pro-name">{{item.goodsName}}</view>
+        <view class="orders-pro-size">颜色分类:{{item.skuName}};尺码:{{item.goodsSize}}</view>
+        <view class="orders-pro-price">￥{{item.unitPrice}}</view>
+        <view class="orders-count-num">×{{item.quantity}}</view>
+
+        <text>\n</text>
+
+
+        <view wx:if="{{orderDetail.status == 3}}" class='buttonGroup'>
+          <button class='buttonPay' data-index="{{index}}" bindtap='toRefund'>退换</button>
+        </view>
+      </view>
+      <!-- 总价 -->
+      <view class='orderTotal'>
+
+        <view class='totalText'>
+          <text>商品总价\n</text>
+          <text>运费\n</text>
+          <text class='orderTotalText'>订单总价\n</text>
+          <view class='actualText'>
+            <text>实付款</text>
+          </view>
+
+        </view>
+
+        <view class='totalPrice'>
+          <text>￥{{orderDetail.due}}\n</text>
+          <text>￥{{orderDetail.diliveryPay}}\n</text>
+          <text class='orderTotalPrice'>￥{{orderDetail.actualPay}}\n</text>
+          <view class='actualPrice'>
+            <text>￥{{orderDetail.actualPay}}</text>
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+</view>
+
+<view class='orderMsg'>
+  <text>订单信息\n</text>
+  <view class='title'>
+    <text>订单编号：{{orderDetail.serial}}\n</text>
+    <text>创建时间：{{orderDetail.createTime}}\n</text>
+    <text>付款时间：{{orderDetail.payTime}}\n</text>
+  </view>
+
+</view>

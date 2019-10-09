@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "统计订单",
+  "usingComponents": {
+    "dilivery": "/components/dilivery/dilivery"
+  },
+  "navigationBarBackgroundColor": "#f58220"
+}

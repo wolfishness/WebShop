@@ -1,0 +1,234 @@
+/* pages/orderDetail/orderDetail.wxss */
+.status{
+  position: relative;
+  width: 100%;
+  height: 200rpx;
+}
+
+.status image{
+  width: 100%;
+  height: 200rpx;
+}
+.statusText{
+  position: absolute;
+  top: 90rpx;
+  width: 100%;
+  text-align: center;
+}
+
+
+.orders-address {
+  position: relative;
+  padding: 20rpx 50rpx 20rpx 35rpx;
+  font-size: 14px;
+  line-height: 25px;
+  border-bottom: 20rpx solid #ededed;
+  color: #adadad;
+}
+.orders-address-icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.orders-address-name {
+  position: absolute;
+  left: 120rpx;
+  top: 2px;
+  display: inline-block;
+  width: 200rpx;
+}
+
+.orders-address-phone {
+  position: absolute;
+  left: 370rpx;
+  top: 2px;
+  display: inline-block;
+  width: 300rpx;
+}
+
+.orders-address-detail {
+  position: absolute;
+  left: 120rpx;
+  top: 23px;
+  display: inline-block;
+  width: 80%;
+}
+
+
+
+
+
+
+
+.tab-content1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.orders-box {
+  border-bottom: 1rpx solid #ededed;
+}
+
+.orders-list {
+  position: relative;
+  padding: 20rpx 20rpx 20rpx 20rpx;
+  border: 1rpx solid #ededed;
+}
+
+
+.itemsObject {
+  position: relative;
+  width: 100%;
+  height: 200rpx;
+}
+
+.orders-thumb {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.orders-pro-name {
+  position: absolute;
+  left: 185rpx;
+  top: 20rpx;
+  font-size: 14px;
+}
+
+.orders-pro-size {
+  position: absolute;
+  left: 185rpx;
+  top: 80rpx;
+  font-size: 12px;
+  color: gray;
+  height: 50rpx;
+}
+
+.orders-pro-price {
+  position: absolute;
+  right: 5rpx;
+  top: 20rpx;
+  font-size: 14px;
+  color: red;
+}
+
+.orders-count-num {
+  position: absolute;
+  right: 5rpx;
+  top: 80rpx;
+  font-size: 14px;
+  height: 50rpx;
+}
+
+ .buttonGroup {
+  position: absolute;
+  bottom: 5rpx;
+  right: 5rpx;
+  width: 100%;
+  height: 42rpx;
+}
+
+ .buttonGroup .buttonPay {
+  position: absolute;
+  right: 5rpx;
+  width: 150rpx;
+  height: 40rpx;
+  font-size: 10px;
+  text-align: center;
+}
+
+.orders-list .buttonGroup .buttonCancel{
+  position: absolute;
+  right: 170rpx;
+  width: 150rpx;
+  height: 40rpx;
+  font-size: 10px;
+  text-align: center;
+}
+
+.orders-list .buttonGroup .buttonDilivery{
+  position: absolute;
+  right: 340rpx;
+  width: 150rpx;
+  height: 40rpx;
+  font-size: 10px;
+  text-align: center;
+}
+
+.orders-list view {
+  line-height: 60rpx;
+}
+
+.orders-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 95rpx;
+  line-height: 95rpx;
+  border-top: 1rpx solid #ededed;
+}
+
+
+
+
+
+.orderMsg{
+  position: relative;
+  border-top: 19rpx solid #ededed;
+}
+
+.title {
+  position: absolute;
+  top: 60rpx;
+  left: 1rpx;
+  width: 99%;
+  text-align: left;
+  font-size: 14px;
+}
+
+
+.orderTotal{
+  display: flex;
+  flex-direction: row;
+}
+
+.totalText{
+  font-size: 27rpx;
+  width: 50%;
+  height: 200rpx;
+  color: gray;
+}
+
+.orderTotalText{
+  font-size: 29rpx;
+  color: black;
+}
+
+.actualText{
+  background: #d1f8f6;
+  background-color: #d1f8f6;
+  width: 100%;
+}
+
+
+.totalPrice{
+  font-size: 27rpx;
+  width: 50%;
+  height: 200rpx;
+  color: gray;
+  text-align: right;
+}
+
+.orderTotalPrice{
+  font-size: 29rpx;
+  color: black;
+}
+
+.actualPrice{
+  background-color: #d1f8f6;
+  width: 100%;
+}

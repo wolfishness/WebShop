@@ -1,0 +1,21 @@
+<view class='popupDom' hidden='{{!isShowSelected}}' catchtap='showSelectedPopup' data-current="current">
+  <view class='pop_main'>
+    <view class='buy_header'>
+      <view class='head_img'>
+        <image src='{{partData.images[0]}}'></image>
+      </view>
+      <view class='info'>
+        <text class='price'>物流单号：</text>
+        <text class='selcount'>12345678999999</text>
+      </view>
+      <text data-current="current" catchtap='showSelectedPopup'>x</text>
+    </view>
+    <scroll-view scroll-y="true">
+      <text decode="{{true}}">
+      
+      物流详情
+</text>
+    </scroll-view>
+
+  </view>
+</view>

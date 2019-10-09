@@ -1,0 +1,43 @@
+<view class='popupDom' hidden='{{!isShowSelected}}' catchtap='showSelectedPopup' data-current="current" >
+  <view class='pop_main'>
+    <view class='buy_header'>
+      <view class='head_img'>
+        <image wx:if="{{defaultURL}}" src='{{defaultURL}}{{partData.images[0]}}'></image>
+      </view>
+      <view class='info'>
+        <text class='price'>¥{{partData.price}}</text>
+        <text class='selcount'>已选 {{partData.count}}件</text>
+      </view>
+      <text data-current="current" catchtap='showSelectedPopup'>x</text>
+    </view>
+    <scroll-view scroll-y="true">
+      <view class='buy_body'>
+
+        <view class='color'>
+          <text>颜色\n</text>
+          <view wx:for="{{radio.productList}}" wx:key="index" class="checkbox '{{item.checked?'checkedActive':''}}'" data-id="{{index}}" bindtap='getRadioColor'>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+
+        <view class='size'>
+          <text>尺码\n</text>
+          <view wx:for="{{radioSize}}" wx:key="index" class="checkbox '{{item.checked?'checkedActive':''}}'" data-id="{{index}}" bindtap='getRadioSize'>
+            <text>{{item.goodsSize}}</text>
+          </view>
+        </view>
+
+        <view class='num'>
+          <text>数量</text>
+          <view class='amount'>
+            <count bind:getSelectNum="getCartVal" count="{{partData.count}}"></count>
+          </view>
+        </view>
+
+      </view>
+    </scroll-view>
+    <view class='pop_btn'>
+      <button catchtap='addCart'>确认选择</button>
+    </view>
+  </view>
+</view>

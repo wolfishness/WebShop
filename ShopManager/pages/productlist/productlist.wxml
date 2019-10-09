@@ -1,0 +1,35 @@
+<view class='prolist'>
+  <block wx:for='{{productList}}' wx:key="index">
+    <view class='prolist_item' data-index='{{index}}'>
+      <view class='prolist_cover'>
+        <image wx:if="{{defaultURL}}" src='{{defaultURL}}{{item.images}}'></image>
+      </view>
+      <view class='prolist_info'>
+        <view class='prolist_title'>
+          <text>{{item.name}}</text>
+        </view>
+        <view class='prolist_price'>
+          <view wx:if='{{item.price == item.marketPrice}}'>
+            <text class="one-price">¥{{item.price}}
+          </text>
+          </view>
+          <view wx:else>
+            <text class="old-price">¥{{item.marketPrice}}
+          <text class="del"></text>
+            </text>
+            <text class="now-price">￥{{item.price}}</text>
+            <!-- <text>¥ {{item.price}}</text> -->
+
+          </view>
+        </view>
+        <view class='prolist_other'>
+          <text class='prolist_conmment'>月销：{{item.sum}}</text>
+          <button data-index='{{index}}' bindtap='downGoods'>下架</button>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class='endview' wx:if='{{noData}}'>
+    <text>没有更多数据</text>
+  </view>
+</view>
